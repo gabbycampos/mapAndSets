@@ -22,9 +22,9 @@ Write a function called hasDuplicate which accepts an array
 and returns true or false if that array contains a duplicate */
 
 // this removes duplicates but does not return boolean.
-//const hasDuplicate = arr => [...new Set(arr)].filter((value, index) => arr.indexOf(value) === index)
+const hasDuplicate = arr => [...new Set(arr)]
 
-const hasDuplicate = arr => new Set(arr).size !== arr.length;
+//const hasDuplicate = arr => new Set(arr).size !== arr.length;
 
 console.log(hasDuplicate([1, 3, 2, 1])) // true
 console.log(hasDuplicate([1, 5, -1, 4])) // false
