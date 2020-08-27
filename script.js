@@ -37,7 +37,7 @@ map where the keys are numbers and the values are the count of the vowels
 in the string. */
 
 // solution
-function isVowel(char) {
+/* function isVowel(char) {
   return "aeiou".includes(char);
 }
 
@@ -54,7 +54,23 @@ function vowelCount(str) {
     }
   }
   return vowelMap;
+} */
+
+function vowelCount(str) {
+  const vowelMap = new Map();
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      if (vowelMap.has(char)) {
+        vowelMap.set(char, vowelMap.get(char) + 1)
+      } else {
+        vowelMap.set(char, 1);
+      }
+    } 
+  }
+  return vowelMap;
 }
+
 
 console.log(vowelCount('awesome')) // Map { 'a' => 1, 'e' => 2, 'o' => 1 }
 vowelCount('Colt') // Map { 'o' => 1 }
